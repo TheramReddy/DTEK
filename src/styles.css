@@ -38,7 +38,7 @@
   }
 
   .dark {
-    --background: 220 10% 5%; /* Very dark background */
+    --background: 220 10% 3%; /* Adjusted: Very dark, almost black background */
     --foreground: 213 31% 91%; /* Light text for general content */
 
     --muted: 223 47% 11%;
@@ -59,7 +59,7 @@
     --primary: 220 10% 12%; /* Adjusted: Default button background: A distinct dark gray */
     --primary-foreground: 210 40% 98%; /* Adjusted: This is now the text color for primary buttons when using hsl(var(--primary-foreground)) */
 
-    --secondary: 222.2 47.4% 11.2%; /* This is also a dark color. Can be used for hover background. */
+    --secondary: 220 10% 10%; /* Adjusted: Another distinct dark gray for secondary sections/hover */
     --secondary-foreground: 210 40% 98%; /* Light color for text on secondary/hover buttons */
 
     --destructive: 0 63% 31%;
@@ -113,5 +113,11 @@
 }
 
 .hero-background {
-  background: linear-gradient(to bottom, hsl(var(--background)), hsl(var(--secondary)));
+  /* Changed to radial gradients for a softer, more diffused "shade mix" */
+  background:
+    radial-gradient(at 0% 0%, hsl(var(--background)) 0%, transparent 70%),
+    radial-gradient(at 100% 100%, hsl(var(--secondary)) 0%, transparent 70%),
+    hsl(var(--background)); /* Fallback background color */
+  background-size: 100% 100%;
+  background-attachment: fixed; /* Ensures the gradient stays fixed as content scrolls */
 }
