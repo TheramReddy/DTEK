@@ -1,1 +1,117 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Shadcn/UI like CSS Variables for colors */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: 0 0% 100%; /* Light card background */
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 220 10% 5%; /* Very dark background */
+    --foreground: 213 31% 91%; /* Light text for general content */
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%; /* Grayish text */
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: 220 10% 8%; /* Adjusted: Slightly lighter dark for card background */
+    --card-foreground: 213 31% 91%; /* Text on cards */
+
+    --primary: 220 10% 12%; /* Adjusted: Default button background: A distinct dark gray */
+    --primary-foreground: 210 40% 98%; /* Adjusted: This is now the text color for primary buttons when using hsl(var(--primary-foreground)) */
+
+    --secondary: 222.2 47.4% 11.2%; /* This is also a dark color. Can be used for hover background. */
+    --secondary-foreground: 210 40% 98%; /* Light color for text on secondary/hover buttons */
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom scrollbar for better aesthetics */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: hsl(var(--card)); /* Using card background for track */
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--border)); /* Using border color for thumb */
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground)); /* Using muted-foreground for hover */
+}
+/* Specific gradient for button-like elements, consistent with Linear's style */
+/* Changed to solid gray to match black & white theme */
+.btn-primary {
+    background-color: hsl(var(--primary)); /* Using primary for button base (dark gray) */
+    color: hsl(var(--foreground)); /* Explicitly set text color to light foreground */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; /* Add transition for hover */
+}
+.btn-primary:hover {
+    background-color: hsl(var(--secondary)); /* Using secondary for hover background (another dark gray) */
+    color: hsl(var(--secondary-foreground)); /* Explicitly set text color to light secondary-foreground */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-background {
+  background: linear-gradient(to bottom, hsl(var(--background)), hsl(var(--secondary)));
+}
