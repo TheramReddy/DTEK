@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section class="py-20 text-center bg-secondary">
+    <section class="py-20 text-center bg-background">
       <div class="container mx-auto px-4 max-w-3xl">
         <!-- Testimonial Quote -->
         <blockquote class="text-2xl md:text-3xl font-medium leading-relaxed text-foreground mb-8">

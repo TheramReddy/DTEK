@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section class="py-20 bg-secondary">
+    <section class="py-20 text-center bg-background">
       <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-12"
            [ngClass]="{'md:flex-row-reverse': reverseLayout}">
         <!-- Text Content -->

@@ -37,6 +37,11 @@ import { CommonModule } from '@angular/common';
         </div>
       </div>
     </nav>
+
+    <!-- Changed bg-secondary to bg-background -->
+    <section class="py-20 text-center bg-background">
+      <!-- Content for the section -->
+    </section>
   `,
   styles: []
 })

@@ -6,6 +6,10 @@
 
 /* Shadcn/UI like CSS Variables for colors */
 @layer base {
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 47.4% 11.2%;
