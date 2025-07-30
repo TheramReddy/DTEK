@@ -7,11 +7,11 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <nav class="w-full bg-background p-4 border-b border-border fixed top-0 z-50">
-      <div class="container mx-auto flex items-center justify-between">
-        <!-- Logo Section -->
+      <!-- Changed container to max-w-screen-xl for alignment with cards -->
+      <div class="container mx-auto flex items-center justify-between max-w-screen-xl">
+        <!-- Logo Section - Removed the icon, kept only the name -->
         <div class="flex items-center space-x-2">
-          <!-- Changed bg-gray-700 to bg-primary for consistency with new theme -->
-          <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-lg">DT</div>
+          <!-- Removed: <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-lg">DT</div> -->
           <span class="text-foreground text-xl font-semibold">Dtek Consulting</span>
         </div>
 
@@ -27,7 +27,7 @@ import { CommonModule } from '@angular/common';
         <!-- Action Buttons -->
         <div class="flex items-center space-x-4">
           <a href="#" class="text-muted-foreground hover:text-foreground transition-colors duration-200 hidden sm:block">Reach Out</a>
-          <button class="btn-primary px-4 py-2 rounded-md text-foreground font-medium text-base"> <!-- Changed text-white to text-foreground -->
+          <button class="btn-primary px-4 py-2 rounded-md text-foreground font-medium text-base">
             Get a Quote
           </button>
           <!-- Mobile menu button (for responsiveness, currently static) -->
