@@ -123,85 +123,94 @@
 
 /* New class for glassmorphism and top-edge glow effect */
 .glass-glow {
-  position: relative; /* Needed for pseudo-element positioning */
-  overflow: hidden; /* Ensures glow doesn't extend outside rounded corners */
-  /* Add a subtle internal shadow for depth, mimicking glass */
-  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px rgba(255 255 255 / 0.05);
 }
 
+/* Reusable horizontal glow gradient */
+.glass-glow {
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px rgba(255 255 255 / 0.05);
+}
+
+/* Shared styles for pseudo-elements */
 .glass-glow::before,
 .glass-glow::after {
   content: '';
   position: absolute;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(0, 150, 255, 0.8) 20%, /* Blue */
-    rgba(108, 45, 255, 0.8) 50%, /* Purple */
-    rgba(255, 255, 255, 0.5) 80%, /* White */
-    transparent 100%
-  );
-  filter: blur(1.5px); /* Blur for the glow effect */
+  filter: blur(1.5px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
   z-index: 1;
-  opacity: 0; /* Hidden by default */
-  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
 }
 
-/* Pseudo-element for horizontal glow (top and bottom) */
+/* Horizontal glowing line (top and bottom) */
 .glass-glow::before {
   top: 0;
-  left: -100%; /* Start off-screen to the left */
-  width: 200%; /* Double the width to allow full traversal */
-  height: 2px; /* Thin line */
-  transform-origin: left center; /* For rotation if needed, but not for this effect */
-}
-
-/* Pseudo-element for vertical glow (left and right) */
-.glass-glow::after {
-  top: -100%; /* Start off-screen upwards */
-  right: 0;
-  width: 2px; /* Thin line */
-  height: 200%; /* Double the height to allow full traversal */
-  transform-origin: top center; /* For rotation if needed */
+  left: 0;
+  width: 100%;
+  height: 2px;
   background: linear-gradient(
-    180deg, /* Vertical gradient */
+    90deg,
     transparent 0%,
     rgba(0, 150, 255, 0.8) 20%,
     rgba(108, 45, 255, 0.8) 50%,
     rgba(255, 255, 255, 0.5) 80%,
     transparent 100%
   );
+  transform: translateX(-100%);
 }
 
+/* Vertical glowing line (right and left) */
+.glass-glow::after {
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 150, 255, 0.8) 20%,
+    rgba(108, 45, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.5) 80%,
+    transparent 100%
+  );
+  transform: translateY(-100%);
+}
+
+/* On hover, show and animate glow lines */
 .glass-glow:hover::before,
 .glass-glow:hover::after {
-  opacity: 1; /* Show on hover */
+  opacity: 1;
 }
 
+/* Animate horizontal line around top and bottom */
 .glass-glow:hover::before {
-  animation: glow-line-horizontal 4s linear infinite;
+  animation: glowHorizontal 4s linear infinite;
 }
 
+/* Animate vertical line around right and left */
 .glass-glow:hover::after {
-  animation: glow-line-vertical 4s linear infinite;
+  animation: glowVertical 4s linear infinite;
 }
 
-@keyframes glow-line-horizontal {
-  0% { left: -100%; top: 0; } /* Start top-left */
-  25% { left: 100%; top: 0; } /* Move right to top-right */
-  25.01% { left: 100%; top: 100%; } /* Instantly jump to bottom-right (hidden by overflow) */
-  50% { left: -100%; top: 100%; } /* Move left to bottom-left (hidden by overflow) */
-  50.01% { left: -100%; top: 0; } /* Instantly jump back to top-left */
-  100% { left: -100%; top: 0; }
+@keyframes glowHorizontal {
+  0%   { top: 0; transform: translateX(-100%); }
+  40%  { top: 0; transform: translateX(100%); }
+  41%  { top: 100%; transform: translateX(100%); }
+  90%  { top: 100%; transform: translateX(-100%); }
+  91%  { top: 0; transform: translateX(-100%); }
+  100% { top: 0; transform: translateX(-100%); }
 }
 
-@keyframes glow-line-vertical {
-  0% { top: -100%; right: 0; } /* Start top-right */
-  25% { top: -100%; right: 0; } /* Wait for horizontal to pass */
-  25.01% { top: -100%; right: 0; } /* Stay top-right */
-  50% { top: 100%; right: 0; } /* Move down to bottom-right */
-  50.01% { top: 100%; right: 0; } /* Stay bottom-right */
-  75% { top: 100%; right: 100%; } /* Move left to bottom-left */
-  75.01% { top: -100%; right: 100%; } /* Stay bottom-left */
-  100% { top: -100%; right: 0; } /* Move up to top-right, completing cycle */
+@keyframes glowVertical {
+  0%   { right: 0; transform: translateY(-100%); }
+  40%  { right: 0; transform: translateY(100%); }
+  41%  { right: 100%; transform: translateY(100%); }
+  90%  { right: 100%; transform: translateY(-100%); }
+  91%  { right: 0; transform: translateY(-100%); }
+  100% { right: 0; transform: translateY(-100%); }
 }
