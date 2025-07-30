@@ -43,6 +43,10 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // New glow colors - adjusted for multi-color effect
+        'glow-blue': 'rgba(0, 150, 255, 0.4)',
+        'glow-purple': 'rgba(108, 45, 255, 0.4)',
+        'glow-white': 'rgba(255, 255, 255, 0.15)',
       },
       borderRadius: {
         lg: "var(--radius)",

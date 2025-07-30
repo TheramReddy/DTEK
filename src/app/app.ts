@@ -19,7 +19,8 @@ import { FeatureSectionLargeComponent } from './components/feature-section-large
     TestimonialComponent,
     FooterComponent,
     ClientsComponent,
-    FeatureSectionLargeComponent
+    FeatureSectionLargeComponent,
+    // Removed: LatestUpdatesComponent
   ],
   template: `
     <!-- The main container for your entire DTEK website -->
@@ -27,10 +28,11 @@ import { FeatureSectionLargeComponent } from './components/feature-section-large
       <app-navbar></app-navbar>
       <main>
         <app-hero></app-hero>
-        <app-clients></app-clients>
+        <!-- Removed <app-latest-updates></app-latest-updates> as its content is now integrated into HeroComponent -->
+        <app-clients class="bg-secondary"></app-clients> <!-- Changed to bg-secondary -->
 
         <!-- Section mimicking "Made for modern product teams" -->
-        <section class="flex flex-col items-center gap-12 pt-[158.8px] pb-40 px-4 relative bg-background">
+        <section class="flex flex-col items-center gap-12 pt-[158.8px] pb-40 px-4 relative bg-background"> <!-- Changed to bg-background -->
           <!-- Adjusted for responsiveness and proper alignment -->
           <div class="flex flex-col md:flex-row w-full max-w-screen-xl items-end justify-between gap-8 relative px-0">
             <div class="flex flex-col items-start relative flex-1">
@@ -86,7 +88,7 @@ import { FeatureSectionLargeComponent } from './components/feature-section-large
           [reverseLayout]="true"
         ></app-feature-section-large>
 
-        <app-testimonial></app-testimonial>
+        <app-testimonial class="bg-secondary"></app-testimonial> <!-- Changed to bg-secondary -->
       </main>
       <app-footer></app-footer>
     </div>

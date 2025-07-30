@@ -11,7 +11,8 @@ import { CommonModule } from '@angular/common';
         <!-- Column 1: Company Info / Logo -->
         <div class="flex flex-col items-start space-y-4">
           <div class="flex items-center space-x-2">
-            <div class="w-8 h-8 bg-gray-button-base rounded-lg flex items-center justify-center text-white font-bold text-lg">DT</div>
+            <!-- Changed bg-gray-700 to bg-primary for consistency with new theme -->
+            <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-lg">DT</div>
             <span class="text-foreground text-xl font-semibold">Dtek Consulting</span>
           </div>
           <p class="text-muted-foreground text-sm">Your trusted partner in cutting-edge IT solutions and strategic technology consulting.</p>

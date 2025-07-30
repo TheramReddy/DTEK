@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
           <div class="inline-flex flex-col h-[360px] items-start justify-end relative bg-card rounded-[30px] overflow-hidden border-none w-full">
             <!-- Abstract visual element (mimicking Linear's card visuals) -->
             <div class="absolute w-full h-80 top-0 left-0 flex items-center justify-center opacity-[0.05]"> <!-- Adjusted opacity -->
-              <svg class="w-full h-full text-muted" viewBox="0 0 200 200" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <svg class="w-full h-full text-muted" viewBox="0 0 200 200" fill="currentColor" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)">
                 <rect x="20" y="20" width="160" height="160" rx="10" ry="10" stroke="currentColor" stroke-width="2" fill="none"/>
                 <rect x="40" y="40" width="120" height="120" rx="8" ry="8" stroke="currentColor" stroke-width="2" fill="none"/>
                 <line x1="20" y1="20" x2="40" y2="40" stroke="currentColor" stroke-width="2"/>
@@ -31,7 +31,7 @@ import { CommonModule } from '@angular/common';
               </div>
               <button class="flex w-10 h-10 items-center justify-center px-[18px] py-0.5 relative rounded-full border-2 border-solid border-border backdrop-blur-sm backdrop-brightness-[100%] hover:bg-muted transition-colors duration-200">
                 <!-- Changed icon to right arrow -->
-                <svg class="w-[18px] h-[18px] text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                <svg class="w-[18px] h-[18px] text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </button>
             </div>
           </div>
@@ -44,7 +44,7 @@ import { CommonModule } from '@angular/common';
           <div class="inline-flex flex-col h-[360px] items-start justify-end relative bg-card rounded-[30px] overflow-hidden border-none w-full">
             <!-- Abstract visual element (mimicking Linear's card visuals) -->
             <div class="absolute w-full h-80 top-0 left-0 flex items-center justify-center opacity-[0.05]"> <!-- Adjusted opacity -->
-              <svg class="w-full h-full text-muted" viewBox="0 0 200 200" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <svg class="w-full h-full text-muted" viewBox="0 0 200 200" fill="currentColor" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)">
                 <line x1="20" y1="50" x2="180" y2="50" stroke="currentColor" stroke-width="2"/>
                 <line x1="20" y1="70" x2="160" y2="70" stroke="currentColor" stroke-width="2"/>
                 <line x1="20" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="2"/>
@@ -61,7 +61,7 @@ import { CommonModule } from '@angular/common';
               </div>
               <button class="flex w-10 h-10 items-center justify-center px-[18px] py-0.5 relative rounded-full border-2 border-solid border-border backdrop-blur-sm backdrop-brightness-[100%] hover:bg-muted transition-colors duration-200">
                 <!-- Changed icon to right arrow -->
-                <svg class="w-[18px] h-[18px] text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                <svg class="w-[18px] h-[18px] text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </button>
             </div>
           </div>
@@ -74,7 +74,7 @@ import { CommonModule } from '@angular/common';
           <div class="inline-flex flex-col h-[360px] items-start justify-end relative bg-card rounded-[30px] overflow-hidden border-none w-full">
             <!-- Abstract visual element (mimicking Linear's card visuals) -->
             <div class="absolute w-full h-80 top-0 left-0 flex items-center justify-center opacity-[0.05]"> <!-- Adjusted opacity -->
-              <svg class="w-full h-full text-muted" viewBox="0 0 200 200" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <svg class="w-full h-full text-muted" viewBox="0 0 200 200" fill="currentColor" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)">
                 <line x1="50" y1="20" x2="50" y2="180" stroke="currentColor" stroke-width="2"/>
                 <line x1="100" y1="20" x2="100" y2="180" stroke="currentColor" stroke-width="2"/>
                 <line x1="150" y1="20" x2="150" y2="180" stroke="currentColor" stroke-width="2"/>
@@ -92,7 +92,7 @@ import { CommonModule } from '@angular/common';
               </div>
               <button class="flex w-10 h-10 items-center justify-center px-[18px] py-0.5 relative rounded-full border-2 border-solid border-border backdrop-blur-sm backdrop-brightness-[100%] hover:bg-muted transition-colors duration-200">
                 <!-- Changed icon to right arrow -->
-                <svg class="w-[18px] h-[18px] text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                <svg class="w-[18px] h-[18px] text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </button>
             </div>
           </div>

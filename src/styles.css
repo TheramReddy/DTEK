@@ -1,3 +1,5 @@
+/* --- src/styles.css (Global Styles) --- */
+/* This file contains global styles for your Angular application, including Tailwind CSS imports and custom CSS. */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -38,7 +40,7 @@
   }
 
   .dark {
-    --background: 220 10% 3%; /* Adjusted: Very dark, almost black background */
+    --background: 220 10% 3%; /* Very dark, almost black background */
     --foreground: 213 31% 91%; /* Light text for general content */
 
     --muted: 223 47% 11%;
@@ -53,13 +55,13 @@
     --border: 216 34% 17%;
     --input: 216 34% 17%;
 
-    --card: 220 10% 8%; /* Adjusted: Slightly lighter dark for card background */
+    --card: 220 10% 8%; /* Slightly lighter dark for card background */
     --card-foreground: 213 31% 91%; /* Text on cards */
 
-    --primary: 220 10% 12%; /* Adjusted: Default button background: A distinct dark gray */
-    --primary-foreground: 210 40% 98%; /* Adjusted: This is now the text color for primary buttons when using hsl(var(--primary-foreground)) */
+    --primary: 220 10% 12%; /* Default button background: A distinct dark gray */
+    --primary-foreground: 210 40% 98%; /* This is now the text color for primary buttons when using hsl(var(--primary-foreground)) */
 
-    --secondary: 220 10% 10%; /* Adjusted: Another distinct dark gray for secondary sections/hover */
+    --secondary: 220 10% 6%; /* Adjusted: Slightly lighter dark gray, for alternating sections */
     --secondary-foreground: 210 40% 98%; /* Light color for text on secondary/hover buttons */
 
     --destructive: 0 63% 31%;
@@ -113,11 +115,93 @@
 }
 
 .hero-background {
-  /* Changed to radial gradients for a softer, more diffused "shade mix" */
-  background:
-    radial-gradient(at 0% 0%, hsl(var(--background)) 0%, transparent 70%),
-    radial-gradient(at 100% 100%, hsl(var(--secondary)) 0%, transparent 70%),
-    hsl(var(--background)); /* Fallback background color */
+  /* Linear gradient from background to secondary color for smooth transition */
+  background: linear-gradient(to bottom, hsl(var(--background)), hsl(var(--secondary)));
   background-size: 100% 100%;
-  background-attachment: fixed; /* Ensures the gradient stays fixed as content scrolls */
+  /* Removed background-attachment: fixed; to allow the gradient to scroll with content */
+}
+
+/* New class for glassmorphism and top-edge glow effect */
+.glass-glow {
+  position: relative; /* Needed for pseudo-element positioning */
+  overflow: hidden; /* Ensures glow doesn't extend outside rounded corners */
+  /* Add a subtle internal shadow for depth, mimicking glass */
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.glass-glow::before,
+.glass-glow::after {
+  content: '';
+  position: absolute;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 150, 255, 0.8) 20%, /* Blue */
+    rgba(108, 45, 255, 0.8) 50%, /* Purple */
+    rgba(255, 255, 255, 0.5) 80%, /* White */
+    transparent 100%
+  );
+  filter: blur(1.5px); /* Blur for the glow effect */
+  z-index: 1;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Pseudo-element for horizontal glow (top and bottom) */
+.glass-glow::before {
+  top: 0;
+  left: -100%; /* Start off-screen to the left */
+  width: 200%; /* Double the width to allow full traversal */
+  height: 2px; /* Thin line */
+  transform-origin: left center; /* For rotation if needed, but not for this effect */
+}
+
+/* Pseudo-element for vertical glow (left and right) */
+.glass-glow::after {
+  top: -100%; /* Start off-screen upwards */
+  right: 0;
+  width: 2px; /* Thin line */
+  height: 200%; /* Double the height to allow full traversal */
+  transform-origin: top center; /* For rotation if needed */
+  background: linear-gradient(
+    180deg, /* Vertical gradient */
+    transparent 0%,
+    rgba(0, 150, 255, 0.8) 20%,
+    rgba(108, 45, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.5) 80%,
+    transparent 100%
+  );
+}
+
+.glass-glow:hover::before,
+.glass-glow:hover::after {
+  opacity: 1; /* Show on hover */
+}
+
+.glass-glow:hover::before {
+  animation: glow-line-horizontal 4s linear infinite;
+}
+
+.glass-glow:hover::after {
+  animation: glow-line-vertical 4s linear infinite;
+}
+
+@keyframes glow-line-horizontal {
+  0% { left: -100%; top: 0; } /* Start top-left */
+  25% { left: 100%; top: 0; } /* Move right to top-right */
+  25.01% { left: 100%; top: 100%; } /* Instantly jump to bottom-right (hidden by overflow) */
+  50% { left: -100%; top: 100%; } /* Move left to bottom-left (hidden by overflow) */
+  50.01% { left: -100%; top: 0; } /* Instantly jump back to top-left */
+  100% { left: -100%; top: 0; }
+}
+
+@keyframes glow-line-vertical {
+  0% { top: -100%; right: 0; } /* Start top-right */
+  25% { top: -100%; right: 0; } /* Wait for horizontal to pass */
+  25.01% { top: -100%; right: 0; } /* Stay top-right */
+  50% { top: 100%; right: 0; } /* Move down to bottom-right */
+  50.01% { top: 100%; right: 0; } /* Stay bottom-right */
+  75% { top: 100%; right: 100%; } /* Move left to bottom-left */
+  75.01% { top: -100%; right: 100%; } /* Stay bottom-left */
+  100% { top: -100%; right: 0; } /* Move up to top-right, completing cycle */
 }
