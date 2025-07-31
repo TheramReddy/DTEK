@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
       <!-- Changed container to max-w-screen-xl for alignment with cards -->
       <div class="container mx-auto flex items-center justify-between max-w-screen-xl">
         <!-- Logo Section - Removed the icon, kept only the name -->
-        <div class="flex items-center space-x-2">
+        <div class="flex items-center space-x-1">
           <!-- Removed: <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-lg">DT</div> -->
           <span class="text-foreground text-xl font-semibold">Dtek Consulting</span>
         </div>
