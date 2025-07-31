@@ -11,28 +11,35 @@ import { CommonModule } from '@angular/common';
         <h2 class="text-xl md:text-2xl font-semibold text-muted-foreground mb-10">
           Trusted by leading organizations.
         </h2>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-center">
-          <!-- Placeholder Client Logo 1 -->
+        <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-7 lg:grid-cols-7 gap-4 items-center justify-center">
+          <!-- Infosys Logo (Using uploaded image) -->
+          
+          <!-- Microsoft Logo (Using uploaded image) -->
           <div class="flex justify-center items-center h-16">
-            <img src="https://placehold.co/120x40/1a1a1a/6b7280?text=Client+A" alt="Client Logo A" class="h-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-200">
+            <img src="assets/images/logos/logo1.svg" alt="MLogo" class="h-full object-contain">
           </div>
-          <!-- Placeholder Client Logo 2 -->
           <div class="flex justify-center items-center h-16">
-            <img src="https://placehold.co/120x40/1a1a1a/6b7280?text=Client+B" alt="Client Logo B" class="h-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-200">
+            <img src="assets/images/logos/logo2.svg" alt="MLogo" class="h-full object-contain">
           </div>
-          <!-- Placeholder Client Logo 3 -->
           <div class="flex justify-center items-center h-16">
-            <img src="https://placehold.co/120x40/1a1a1a/6b7280?text=Client+C" alt="Client Logo C" class="h-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-200">
+            <img src="assets/images/logos/logo3.svg" alt="MLogo" class="h-full object-contain">
           </div>
-          <!-- Placeholder Client Logo 4 -->
           <div class="flex justify-center items-center h-16">
-            <img src="https://placehold.co/120x40/1a1a1a/6b7280?text=Client+D" alt="Client Logo D" class="h-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-200">
+            <img src="assets/images/logos/logo4.svg" alt="MLogo" class="h-full object-contain">
           </div>
-          <!-- Placeholder Client Logo 5 -->
           <div class="flex justify-center items-center h-16">
-            <img src="https://placehold.co/120x40/1a1a1a/6b7280?text=Client+E" alt="Client Logo E" class="h-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-200">
+            <img src="assets/images/logos/logo5.svg" alt="MLogo" class="h-full object-contain">
           </div>
-          <!-- Add more client logos as needed -->
+          <div class="flex justify-center items-center h-16">
+            <img src="assets/images/logos/logo6.svg" alt="MLogo" class="h-full object-contain">
+          </div>
+          <div class="flex justify-center items-center h-16">
+            <img src="assets/images/logos/logo7.svg" alt="MLogo" class="h-full object-contain">
+          </div>
+
+          <!-- Google Logo (Using uploaded image) -->
+           
+          
         </div>
       </div>
     </section>

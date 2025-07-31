@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./src/**/*.{html,ts}",
@@ -47,6 +48,9 @@ module.exports = {
         'glow-blue': 'rgba(0, 150, 255, 0.4)',
         'glow-purple': 'rgba(108, 45, 255, 0.4)',
         'glow-white': 'rgba(255, 255, 255, 0.15)',
+        // Explicitly defining custom colors for buttons
+        'button-bg': '#1C1C1F',
+        'button-border': '#333333',
       },
       borderRadius: {
         lg: "var(--radius)",

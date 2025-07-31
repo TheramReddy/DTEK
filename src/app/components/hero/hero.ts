@@ -22,10 +22,11 @@ import { FeatureCardComponent } from '../feature-card/feature-card'
         Container for main content within the hero section.
         - mx-auto: Centers the container horizontally.
         - px-4: Horizontal padding for responsiveness.
+        - Added max-w-screen-xl to align with Navbar and cards
       -->
-      <div class="container mx-auto px-4">
+      <div class="container mx-auto px-4 max-w-screen-xl">
         <!-- Main Heading -->
-        <h1 class="text-5xl md:text-7xl font-extrabold text-foreground leading-tight mb-6">
+        <h1 class="text-5xl md:text-7xl font-bold text-foreground leading-tight mb-6">
           Unlocking Your Potential <br class="hidden md:inline"> Through Technology.
         </h1>
         <!-- Subheading/Description -->
@@ -34,7 +35,8 @@ import { FeatureCardComponent } from '../feature-card/feature-card'
         </p>
         <!-- Call-to-Action Buttons -->
         <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-20">
-          <button class="btn-primary px-8 py-3 rounded-md text-foreground text-lg font-semibold shadow-lg">
+          <!-- Updated Explore Services button styling -->
+          <button class="px-8 py-3 rounded-md text-lg font-semibold shadow-sm border border-gray-300 bg-gray-200 text-gray-900 hover:bg-gray-300 transition-colors duration-200">
             Explore Services
           </button>
           <a href="#" class="flex items-center space-x-2 text-muted-foreground text-lg font-medium hover:text-foreground transition-colors duration-200">
