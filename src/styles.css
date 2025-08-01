@@ -1,3 +1,18 @@
+/* Hide scrollbar for elements with .scrollbar-hide */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Custom gradient for the Hero section */
+.hero-background {
+    background: linear-gradient(to bottom, #1a1a1a, #0f1011);
+}
+/* Removed .modal-background as it's no longer used */
+
 /* --- src/styles.css (Global Styles) --- */
 /* This file contains global styles for your Angular application, including Tailwind CSS imports and custom CSS. */
 @tailwind base;
@@ -11,47 +26,12 @@
     color: hsl(var(--foreground));
   }
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 47.4% 11.2%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-
-    --card: 0 0% 100%; /* Light card background */
-    --card-foreground: 222.2 47.4% 11.2%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 100% 50%;
-    --destructive-foreground: 210 40% 98%;
-
-    --ring: 215 20.2% 65.1%;
-
-    --radius: 0.5rem;
-  }
-
-  .dark {
+    /* Changed default background to black (from dark mode definition) */
     --background: 220 10% 3%; /* Very dark, almost black background */
     --foreground: 213 31% 91%; /* Light text for general content */
 
     --muted: 223 47% 11%;
     --muted-foreground: 215.4 16.3% 56.9%; /* Grayish text */
-
-    --accent: 216 34% 17%;
-    --accent-foreground: 210 40% 98%;
 
     --popover: 224 71% 4%;
     --popover-foreground: 215 20.2% 65.1%;
@@ -67,6 +47,43 @@
 
     --secondary: 220 10% 6%; /* Adjusted: Slightly lighter dark gray, for alternating sections */
     --secondary-foreground: 210 40% 98%; /* Light color for text on secondary/hover buttons */
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+
+  /* The .dark class is now redundant for background if :root is already dark, but kept for other dark mode specific variables if any */
+  .dark {
+    --background: 220 10% 3%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: 220 10% 8%;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 220 10% 12%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 220 10% 6%;
+    --secondary-foreground: 210 40% 98%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;

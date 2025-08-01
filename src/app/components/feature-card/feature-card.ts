@@ -9,7 +9,7 @@ import { CloseButtonComponent } from '../close-button'; // Import the new CloseB
   imports: [CommonModule, IconButtonComponent, CloseButtonComponent], // Add new components to imports
   template: `
     <!-- Individual Feature Card - Re-added backdrop-blur-xl and glass-glow for blur effect -->
-    <div class="flex-none w-80 bg-[#0a0a0a] rounded-[30px] overflow-hidden border-[#ffffff0d] relative min-h-[450px] glass-glow backdrop-blur-xl">
+    <div class="flex-none w-72 bg-[#0a0a0a] rounded-[30px] overflow-hidden border-[#ffffff0d] relative min-h-[450px] glass-glow backdrop-blur-xl">
       <!-- Background image container -->
       <div class="absolute top-0 left-0 w-full h-full">
         <!-- The actual image, covering the background -->

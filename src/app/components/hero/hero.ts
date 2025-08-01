@@ -7,16 +7,18 @@ import { FeatureCardComponent } from '../feature-card/feature-card'
   standalone: true,
   imports: [CommonModule, FeatureCardComponent],
   template: `
-    <section class="bg-black py-20 overflow-hidden">
+    <!-- Changed bg-black to bg-background for consistency with global theme -->
+    <section class="bg-background overflow-hidden py-20">
       <div class="container mx-auto px-4 max-w-screen-xl">
         <!-- New wrapper div for left-aligned content, centered as a block -->
         <div class="max-w-4xl mx-auto text-left">
-          <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Linear is a purpose-built tool for planning and building products
+          <!-- Added mt-0 to remove any default top margin on h1 -->
+          <h1 class="text-foreground text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight mt-0">
+            DTeK Consulting Services Inc.,<br>a Women-Owned Minority business.
           </h1>
 
-          <p class="text-white text-opacity-75 text-lg md:text-xl max-w-3xl mb-10">
-            Meet the system for modern software development. Streamline issues, projects, and product roadmaps.
+          <p class="text-foreground text-opacity-75 text-lg md:text-xl max-w-3xl mb-10">
+            Has served tech needs in government and commercial markets from Northern Virginia for 20 years.
           </p>
 
           <!-- Adjusted for mobile responsiveness: buttons on same line, smaller -->
@@ -25,7 +27,7 @@ import { FeatureCardComponent } from '../feature-card/feature-card'
               Start building
             </button>
             <a href="#" class="flex items-center space-x-1 sm:space-x-2 text-white text-opacity-75 text-base sm:text-lg font-medium hover:text-white transition-colors duration-200">
-              <span>Introducing Linear for Agents</span>
+              <span>Contact Sales</span>
               <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
@@ -33,7 +35,8 @@ import { FeatureCardComponent } from '../feature-card/feature-card'
           </div>
         </div>
 
-        <div class="w-full max-w-screen-xl mx-auto pt-20">
+        <!-- Feature cards section - Adjusted spacing from main hero content -->
+        <div class="w-full max-w-screen-xl mx-auto mt-12">
           <div class="flex flex-wrap justify-center gap-6">
             <app-feature-card *ngFor="let card of cardsData"
                               [bottomTitle]="card.bottomTitle"
@@ -48,7 +51,7 @@ import { FeatureCardComponent } from '../feature-card/feature-card'
   styles: []
 })
 export class HeroComponent implements AfterViewInit {
-  // Data for the feature cards - Reduced to 3 cards
+  // Data for the feature cards - Reduced to 4 cards
   cardsData = [
     {
       bottomTitle: 'Customer Requests',
@@ -57,13 +60,18 @@ export class HeroComponent implements AfterViewInit {
     },
     {
       bottomTitle: 'Strategic Planning',
-      bottomDescription: 'Align your team with a\nunified roadmap',
+      bottomDescription: 'Unified Roadmap',
       imageSrc: 'assets/images/planning.png'
     },
     {
       bottomTitle: 'Agile Development',
-      bottomDescription: 'Streamline your project\nlifecycle',
+      bottomDescription: 'Streamline your project',
       imageSrc: 'assets/images/agile.png'
+    },
+    {
+      bottomTitle: 'Cloud Solutions',
+      bottomDescription: 'Seamless operations',
+      imageSrc: 'assets/images/cloud.png'
     }
   ];
 
