@@ -1,10 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IconButtonComponent } from '../icon-button'; // Import the new IconButtonComponent
+import { CloseButtonComponent } from '../close-button'; // Import the new CloseButtonComponent
 
 @Component({
   selector: 'app-feature-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, IconButtonComponent, CloseButtonComponent], // Add new components to imports
   template: `
     <!-- Individual Feature Card - Re-added backdrop-blur-xl and glass-glow for blur effect -->
     <div class="flex-none w-80 bg-[#0a0a0a] rounded-[30px] overflow-hidden border-[#ffffff0d] relative min-h-[450px] glass-glow backdrop-blur-xl">
@@ -34,19 +36,8 @@ import { CommonModule } from '@angular/common';
             <div class="relative w-fit font-segoe-ui font-normal text-[#f7f8f8] text-[15px] tracking-[-0.17px] leading-6 pr-4 whitespace-pre-line">
               {{ bottomDescription }}
             </div>
-            <!-- Button with '+' symbol:
-                 - w-10 h-10: sets width and height for a perfect square
-                 - rounded-full: makes it perfectly circular
-                 - bg-button-bg border border-button-border: applies the dark background and border
-                 - SVG w-6 h-6: makes the '+' symbol smaller and centered within the button -->
-            <button
-              (click)="openModal()"
-              class="flex-shrink-0 w-10 h-10 items-center justify-center rounded-full bg-button-bg border border-button-border -mt-2 flex"
-            >
-              <svg class="w-6 h-6 text-[#f7f8f8]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-              </svg>
-            </button>
+            <!-- Replaced button with reusable IconButtonComponent -->
+            <app-icon-button icon="plus" ariaLabel="Open details" (buttonClick)="openModal()" customClasses="-mt-2"></app-icon-button>
           </div>
         </div>
       </div>
@@ -63,16 +54,8 @@ import { CommonModule } from '@angular/common';
         class="relative rounded-[20px] p-12 max-w-3xl w-full mx-4 max-h-[90vh] overflow-y-auto bg-[#121212]"
         (click)="$event.stopPropagation()"
       >
-        <!-- Close Button with 'x' symbol:
-             - Added z-20 to ensure it's on top of the modal image -->
-        <button
-          (click)="closeModal()"
-          class="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center bg-button-bg border border-button-border text-[#8a8f98] hover:text-foreground transition-colors duration-200 z-20"
-        >
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
+        <!-- Replaced close button with reusable CloseButtonComponent -->
+        <app-close-button (closeClick)="closeModal()"></app-close-button>
 
         <!-- Modal Image/Illustration - RE-ADDED and uses card image and gradients -->
         <div class="relative w-full h-[250px] overflow-hidden rounded-lg mb-8">
