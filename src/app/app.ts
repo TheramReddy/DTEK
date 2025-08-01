@@ -8,7 +8,6 @@ import { FooterComponent } from './components/footer/footer';
 import { ClientsComponent } from './components/clients/clients'; // New: For client logos
 import { FeatureSectionLargeComponent } from './components/feature-section-large/feature-section-large'; // New: For larger feature sections
 
-
 @Component({
   selector: 'app-root',
   standalone: true,

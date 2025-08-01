@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./src/**/*.{html,ts}",
@@ -7,8 +8,6 @@ module.exports = {
       fontFamily: {
         // Defined custom font family for Segoe UI
         'segoe-ui': ['"Segoe UI"', 'sans-serif'],
-        // Added Space Mono font for the logo
-        'mono': ['"Space Mono"', 'monospace'],
       },
       colors: {
         // Re-mapping shadcn/ui CSS variables to Tailwind classes
