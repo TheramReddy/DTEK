@@ -17,17 +17,17 @@ import { CloseButtonComponent } from '../close-button'; // Import the new CloseB
 
         <!-- Navigation Links (Desktop) -->
         <div class="hidden md:flex space-x-8">
-          <a href="#" class="text-muted-foreground hover:text-foreground transition-colors duration-200 text-base font-medium">About Us</a>
-          <a href="#" class="text-muted-foreground hover:text-foreground transition-colors duration-200 text-base font-medium">Services</a>
-          <a href="#" class="text-muted-foreground hover:text-foreground transition-colors duration-200 text-base font-medium">Partners</a>
-          <a href="#" class="text-muted-foreground hover:text-foreground transition-colors duration-200 text-base font-medium">Clients</a>
-          <a href="#" class="text-muted-foreground hover:text-foreground transition-colors duration-200 text-base font-medium">Contact Us</a>
+          <a href="#" class="text-white text-opacity-75 hover:text-foreground transition-colors duration-200 text-base font-medium">About Us</a>
+          <a href="#" class="text-white text-opacity-75 hover:text-foreground transition-colors duration-200 text-base font-medium">Services</a>
+          <a href="#" class="text-white text-opacity-75 hover:text-foreground transition-colors duration-200 text-base font-medium">Partners</a>
+          <a href="#" class="text-white text-opacity-75 hover:text-foreground transition-colors duration-200 text-base font-medium">Clients</a>
+          <a href="#" class="text-white text-opacity-75 hover:text-foreground transition-colors duration-200 text-base font-medium">Contact Us</a>
         </div>
 
         <!-- Action Buttons (Desktop) and Mobile Menu Button -->
         <div class="flex items-center space-x-4">
           <!-- Re-added "Reach Out" link -->
-          <a href="#" class="text-muted-foreground hover:text-foreground transition-colors duration-200 hidden sm:block">Reach Out</a>
+          <a href="#" class="text-white text-opacity-75 hover:text-foreground transition-colors duration-200 hidden sm:block">Reach Out</a>
           <!-- Updated Get a Quote button styling - Hidden on mobile -->
           <button class="hidden md:block px-1 py-1 rounded-md font-medium text-base bg-gray-200 text-gray-900 shadow-sm border border-gray-300 hover:bg-gray-300 transition-colors duration-200">
             Get a Quote
@@ -55,9 +55,7 @@ import { CloseButtonComponent } from '../close-button'; // Import the new CloseB
     </div>
 
     <!-- Changed bg-secondary to bg-background -->
-    <section class="py-20 text-center bg-background">
-      <!-- Content for the section -->
-    </section>
+ 
   `,
   styles: []
 })

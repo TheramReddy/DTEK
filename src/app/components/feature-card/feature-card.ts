@@ -76,37 +76,24 @@ import { CloseButtonComponent } from '../close-button'; // Import the new CloseB
         </h2>
 
         <!-- Reverted text color to muted-foreground for less brightness -->
-        <p class="text-muted-foreground text-lg mb-4 text-left">
-          Linear was developed with a specific purpose: to empower product teams to do
-          their best work. Every aspect is intentionally designed to help teams focus on
-          what they do best: Planning, building, and shipping great products.
+        <p class="text-white text-opacity-75 text-lg mb-4 text-left">
+          DTeK Consulting Services Inc. was created with a clear mission: to empower clients with top-tier technology support.
+          Every element is designed to help meet tech needs efficiently, focusing on innovation, service, and delivery for both government and commercial sectors.
         </p>
-        <p class="text-muted-foreground text-lg mb-8 text-left">
-          Because of its fit-to-purpose design, Linear is incredibly easy to use, but grows
-          more powerful as you scale. It's principled where it needs to be, but provides
-          enough flexibility to adapt to your team's unique way of working.
+        <p class="text-white text-opacity-75 text-lg mb-8 text-left">
+          Thanks to its tailored design, DTeK is user-friendly yet grows stronger with scale. 
+          It maintains core principles while offering flexibility to adapt to unique client workflows.
         </p>
-        <p class="text-muted-foreground text-lg mb-8 text-left">
-          We believe that this approach creates a better way to build products. And more
-          than 10,000 product teams around the globe – from early-stage startups to
-          public companies – agree.
+        <p class="text-white text-opacity-75 text-lg mb-8 text-left">
+          We believe this approach delivers superior tech solutions. 
+          Over 20 years, DTeK has earned trust from clients in Northern Virginia and beyond, including government and commercial entities.
         </p>
 
         <!-- Quote Section - Reverted text color to muted-foreground -->
         <div class="border-l-2 border-primary pl-6 mb-8">
-          <p class="text-muted-foreground text-lg italic leading-relaxed">
-            “We’d tried many tools before Linear but none of them felt
-            like they were made for the way we work. Linear was a
-            breath of fresh air - speedy, snappy, and a pleasure to use.”
+          <p class="text-white text-opacity-50 text-lg italic leading-relaxed">
+            “Before DTeK, we struggled with other providers, but none matched our needs. DTeK brought a refreshing change that was reliable, efficient, and a joy to work with.”
           </p>
-        </div>
-
-        <!-- Vercel Logo -->
-        <div class="flex justify-center mt-8">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="text-foreground">
-            <path d="M12 0L24 22H0L12 0Z"></path>
-          </svg>
-          <span class="text-foreground text-lg font-semibold ml-2">Vercel</span>
         </div>
       </div>
     </div>
