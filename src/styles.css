@@ -1,5 +1,4 @@
 /* Hide scrollbar for elements with .scrollbar-hide */
-
 .scrollbar-hide::-webkit-scrollbar {
     display: none;
 }
@@ -235,4 +234,18 @@
   90%  { right: 100%; transform: translateY(-100%); }
   91%  { right: 0; transform: translateY(-100%); }
   100% { right: 0; transform: translateY(-100%); }
+}
+
+/* Keyframes for continuous logo scrolling */
+@keyframes scroll-logos {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); } /* Scrolls half the width to loop seamlessly */
+}
+
+.logo-scroll-animation {
+  animation: scroll-logos 20s linear infinite; /* Adjust duration as needed */
+}
+
+.logo-scroll-animation:hover {
+  animation-play-state: paused;
 }
