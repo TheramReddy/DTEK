@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CloseButtonComponent } from '../close-button'; // Import the new CloseButtonComponent
-
+import { ContactModalComponent } from '../contact-modal';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, CloseButtonComponent], // Add CloseButtonComponent to imports
+  imports: [CommonModule, CloseButtonComponent, ContactModalComponent], // Add ContactModalComponent to imports
   template: `
     <nav class="w-full bg-background p-4 border-b border-border fixed top-0 z-50">
       <!-- Ensure consistent padding and max-width -->
@@ -28,8 +28,8 @@ import { CloseButtonComponent } from '../close-button'; // Import the new CloseB
         <div class="flex items-center space-x-4">
           <!-- Re-added "Reach Out" link -->
           <a href="#" class="text-white text-opacity-75 hover:text-foreground transition-colors duration-200 hidden sm:block">Reach Out</a>
-          <!-- Updated Get a Quote button styling - Hidden on mobile -->
-          <button class="hidden md:block px-1 py-1 rounded-md font-medium text-base bg-gray-200 text-gray-900 shadow-sm border border-gray-300 hover:bg-gray-300 transition-colors duration-200">
+          <!-- Updated Get a Quote button styling - Added click handler to open modal -->
+          <button (click)="openContactModal()" class="hidden md:block px-1 py-1 rounded-md font-medium text-base bg-gray-200 text-gray-900 shadow-sm border border-gray-300 hover:bg-gray-300 transition-colors duration-200">
             Get a Quote
           </button>
           <!-- Mobile menu button (for responsiveness) -->
@@ -41,7 +41,7 @@ import { CloseButtonComponent } from '../close-button'; // Import the new CloseB
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div *ngIf="showMobileMenu" class="fixed inset-0 bg-black bg-opacity-90 z-40 md:hidden flex flex-col items-center justify-center space-y-8">
+    <div *ngIf="showMobileMenu" class="fixed inset-0 bg-black bg-opacity-90 z-51 md:hidden flex flex-col items-center justify-center space-y-8">
       <!-- Replaced close button with reusable CloseButtonComponent -->
       <app-close-button (closeClick)="toggleMobileMenu()"></app-close-button>
 
@@ -54,19 +54,35 @@ import { CloseButtonComponent } from '../close-button'; // Import the new CloseB
       <!-- "Get a Quote" button is intentionally NOT here for mobile view -->
     </div>
 
-    <!-- Changed bg-secondary to bg-background -->
- 
+    <!-- Contact Modal -->
+    <app-contact-modal *ngIf="showContactModal" (close)="closeContactModal()"></app-contact-modal>
   `,
   styles: []
 })
 export class NavbarComponent {
   // State to control mobile menu visibility
   showMobileMenu: boolean = false;
+  // State to control contact modal visibility
+  showContactModal: boolean = false;
 
   /**
    * Toggles the visibility of the mobile menu.
    */
   toggleMobileMenu(): void {
     this.showMobileMenu = !this.showMobileMenu;
+  }
+
+  /**
+   * Opens the contact modal.
+   */
+  openContactModal(): void {
+    this.showContactModal = true;
+  }
+
+  /**
+   * Closes the contact modal.
+   */
+  closeContactModal(): void {
+    this.showContactModal = false;
   }
 }

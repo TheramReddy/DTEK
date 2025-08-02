@@ -13,7 +13,7 @@ import { FeatureCardComponent } from '../feature-card/feature-card'
         <!-- New wrapper div for left-aligned content, centered as a block -->
         <div class="max-w-4xl mx-auto text-left">
           <!-- Added mt-0 to remove any default top margin on h1 -->
-          <h1 class="text-foreground text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight mt-0">
+          <h1 class="text-foreground text-2xl md:text-5xl lg:text-5xl font-bold mb-6 leading-tight mt-0">
             DTeK Consulting Services Inc.,a Women-Owned Minority business.
           </h1>
 
