@@ -13,11 +13,11 @@ import { FeatureCardComponent } from '../feature-card/feature-card'
         <!-- New wrapper div for left-aligned content, centered as a block -->
         <div class="max-w-4xl text-left">
           <!-- Added mt-0 to remove any default top margin on h1 -->
-          <h1 class="text-white text-opacity-75 text-2xl md:text-5xl lg:text-5xl font-bold mb-6 leading-tight mt-0">
+          <h1 class="text-white text-opacity-95 text-2xl md:text-5xl lg:text-5xl font-semibold mb-6 leading-tight mt-0">
             DTeK Consulting Services Inc.,a Women-Owned Minority business.
           </h1>
 
-          <p class="text-foreground text-opacity-75 text-lg md:text-xl max-w-3xl mb-10">
+          <p class="text-white text-opacity-75 text-lg md:text-xl max-w-3xl mb-10">
             Has served tech needs in government and commercial markets from Northern Virginia for 20 years.
           </p>
 
