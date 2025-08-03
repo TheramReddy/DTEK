@@ -57,8 +57,8 @@ export class HeroComponent implements AfterViewInit {
   // Data for the feature cards - Restored original imageSrc paths
   cardsData = [
     {
-      bottomTitle: 'Customer Requests',
-      bottomDescription: 'Build what customers\nactually want',
+      bottomTitle: 'Client Requests',
+      bottomDescription: 'Build what client\nactually want',
       imageSrc: 'assets/images/mobile.png'
     },
     {
