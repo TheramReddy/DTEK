@@ -40,19 +40,46 @@ import { ContactModalComponent } from '../contact-modal';
       </div>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
-    <div *ngIf="showMobileMenu" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-md transition-opacity duration-200 md:hidden flex flex-col items-center justify-center space-y-8">
-      <!-- Replaced close button with reusable CloseButtonComponent -->
-      <app-close-button (closeClick)="toggleMobileMenu()"></app-close-button>
+                  <!-- Mobile Menu Overlay -->
+                  <div *ngIf="showMobileMenu" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-lg transition-opacity duration-200 md:hidden flex flex-col">
+                <!-- Top: Logo and Close Button -->
+                <div class="flex items-center justify-between px-6 pt-4 pb-6 border-b border-white/10">
+                  <span class="text-foreground text-xl font-normal font-mono">dtekConsulting<span class="text-sky-500">.us</span></span>
+                  <app-close-button (closeClick)="toggleMobileMenu()"></app-close-button>
+                </div>
 
-      <a (click)="toggleMobileMenu()" href="#" class="text-white text-2xl font-semibold hover:text-primary transition-colors duration-200">About Us</a>
-      <a (click)="toggleMobileMenu()" href="#" class="text-white text-2xl font-semibold hover:text-primary transition-colors duration-200">Services</a>
-      <a (click)="toggleMobileMenu()" href="#" class="text-white text-2xl font-semibold hover:text-primary transition-colors duration-200">Partners</a>
-      <a (click)="toggleMobileMenu()" href="#" class="text-white text-2xl font-semibold hover:text-primary transition-colors duration-200">Clients</a>
-      <a (click)="toggleMobileMenu()" href="#" class="text-white text-2xl font-semibold hover:text-primary transition-colors duration-200">Contact Us</a>
-      <a (click)="toggleMobileMenu()" href="#" class="text-white text-2xl font-semibold hover:text-primary transition-colors duration-200">Reach Out</a>
-      <!-- "Get a Quote" button is intentionally NOT here for mobile view -->
-    </div>
+                <!-- Menu Heading -->
+                <div class="px-6 pt-4 pb-2">
+                  <div class="uppercase text-xs tracking-widest text-white/40 mb-1">Menu</div>
+                </div>
+
+                <!-- Main Menu Items -->
+                <nav class="flex flex-col px-6 space-y-1">
+                  <a (click)="toggleMobileMenu()" href="#" class="text-white/70 hover:text-white transition-colors duration-150 text-base font-medium py-2 rounded text-left">About Us</a>
+                  <a (click)="toggleMobileMenu()" href="#" class="text-white/70 hover:text-white transition-colors duration-150 text-base font-medium py-2 rounded text-left">Services</a>
+                  <a (click)="toggleMobileMenu()" href="#" class="text-white/70 hover:text-white transition-colors duration-150 text-base font-medium py-2 rounded text-left">Partners</a>
+                  <a (click)="toggleMobileMenu()" href="#" class="text-white/70 hover:text-white transition-colors duration-150 text-base font-medium py-2 rounded text-left">Clients</a>
+                  <a (click)="toggleMobileMenu()" href="#" class="text-white/70 hover:text-white transition-colors duration-150 text-base font-medium py-2 rounded text-left">Contact Us</a>
+                </nav>
+
+                <!-- Get in Touch Heading -->
+                <div class="px-6 pt-4 pb-2">
+                  <div class="uppercase text-xs tracking-widest text-white/40 mb-1">Get in Touch</div>
+                </div>
+
+                <!-- Bottom: Reach Out & Get a Quote -->
+                <div class="flex flex-col px-6 pb-6 space-y-3">
+                  <a (click)="toggleMobileMenu()" href="#" class="text-white/90 underline text-base font-medium hover:text-sky-400 transition-colors duration-150 text-left">Reach Out</a>
+                    <button
+                      (click)="openContactModal(); toggleMobileMenu()"
+                      class="w-full px-4 py-2 rounded-md font-medium text-base bg-white/90 text-gray-900 shadow-none border-none hover:bg-white transition-colors duration-150 text-left"
+                    >
+                      Get a Quote
+                    </button>
+                </div>
+              </div>
+
+
 
     <!-- Contact Modal -->
     <app-contact-modal *ngIf="showContactModal" (close)="closeContactModal()"></app-contact-modal>

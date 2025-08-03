@@ -8,7 +8,7 @@ import { CloseButtonComponent } from '../components/close-button'; // Assuming p
   imports: [CommonModule, CloseButtonComponent],
   template: `
     <div class="fixed inset-0 bg-black bg-opacity-90 z-[100] flex items-center justify-center p-4">
-      <div class="relative bg-[#000000] rounded-lg shadow-lg max-w-3xl w-full p-8 md:p-12 overflow-y-auto max-h-[90vh] border border-[#3a3a3a]">
+      <div class="relative bg-[#000000] rounded-lg shadow-lg max-w-3xl w-full p-8 md:p-12 overflow-y-auto max-h-[95vh] border border-[#3a3a3a]">
         <app-close-button (closeClick)="closeModal()"></app-close-button>
 
         <div class="text-center mb-8">
@@ -20,7 +20,6 @@ import { CloseButtonComponent } from '../components/close-button'; // Assuming p
             </button>
           </div>
           <h2 class="text-white text-opacity-75 text-4xl md:text-5xl font-bold mb-4">Lets Have a Chat</h2>
-          <p class="text-white text-opacity-85 text-lg">Questions about our products/services, orders, or just want to say hello? We're here to help</p>
         </div>
 
         <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -51,14 +50,14 @@ import { CloseButtonComponent } from '../components/close-button'; // Assuming p
           </div>
         </form>
 
-        <div class="flex justify-center space-x-6 mt-12 text-muted-foreground">
-          <div class="flex justify-center items-center h-10">
+        <div class="flex justify-center space-x-3 mt-4 text-muted-foreground">
+          <div class="flex justify-center items-center h-5">
           <img src="assets/images/logos/IC1.svg" alt="MLogo" class="h-full object-contain">
           </div>
-          <div class="flex justify-center items-center h-10">
+          <div class="flex justify-center items-center h-5">
             <img src="assets/images/logos/IC2.svg" alt="MLogo" class="h-full object-contain">
           </div>
-          <div class="flex justify-center items-center h-10">
+          <div class="flex justify-center items-center h-5">
             <img src="assets/images/logos/IC3.svg" alt="MLogo" class="h-full object-contain">
           </div>
         </div>

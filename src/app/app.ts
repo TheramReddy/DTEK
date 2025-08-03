@@ -20,18 +20,21 @@ import { ClientsComponent } from './components/clients/clients'; // New: For cli
   ],
   template: `
     <!-- The main container for your entire DTEK website -->
-    <div class="overflow-x-hidden">
-      <app-navbar></app-navbar>
-      <main class="pt-[64px]">
-        <app-hero></app-hero>
+     
+            <div class="flex flex-col min-h-screen overflow-x-hidden">
+  <app-navbar></app-navbar>
+  <main class="pt-[64px] flex-1">
+    <app-hero></app-hero>
+    <app-clients class="bg-secondary"></app-clients>
+    <app-footer></app-footer>
+  </main>
+  
+</div>
 
-        <app-clients class="bg-secondary"></app-clients> <!-- Changed to bg-secondary -->
-      </main>
-      <app-footer></app-footer>
-    </div>
+    
   `,
   styles: []
 })
 export class AppComponent {
-  title = 'dtek-website-clone';
+  title = 'DTEK';
 }

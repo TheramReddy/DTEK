@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   template: `
     <button
       (click)="onClose()"
-      class="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center bg-gray-800 border border-gray-700 text-white hover:bg-gray-700 transition-colors duration-200 z-[9999]"
+      class="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-gray-700 transition-colors duration-200 z-[9999]"
       aria-label="Close"
     >
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
