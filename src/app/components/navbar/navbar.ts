@@ -41,7 +41,7 @@ import { ContactModalComponent } from '../contact-modal';
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div *ngIf="showMobileMenu" class="fixed inset-0 bg-black bg-opacity-90 z-51 md:hidden flex flex-col items-center justify-center space-y-8">
+    <div *ngIf="showMobileMenu" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-md transition-opacity duration-200 md:hidden flex flex-col items-center justify-center space-y-8">
       <!-- Replaced close button with reusable CloseButtonComponent -->
       <app-close-button (closeClick)="toggleMobileMenu()"></app-close-button>
 
